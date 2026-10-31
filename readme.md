@@ -17,7 +17,7 @@ Tip: Hover over emoji for additional information (ðŸ”— link to related issue, ðŸ
 
 (Toggle visibility of specific project in the table)
 
-- [x]{: #allCheckbox} All
+- [x] All
 - [ ] Chevereto
 - [ ] Damselfly
 - [ ] Ente
