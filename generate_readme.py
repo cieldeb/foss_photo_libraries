@@ -299,7 +299,7 @@ def validate_projects_json(data):
 def generate_project_selector(data):
     projects_checkboxes = "(Toggle visibility of specific project in the table)\n\n- [x] All\n"
     for project in data["projects"]:
-        projects_checkboxes += f"- [ ] {project["name"]}\n"
+        projects_checkboxes += f"- [ ] {project["name"]}\n"
 
     projects_checkboxes += "\n\n"
     return projects_checkboxes
