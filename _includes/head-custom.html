@@ -23,5 +23,12 @@
     wrapper.appendChild(el);
     wrapper.insertAdjacentHTML( 'beforebegin', '<button name="toggle-table-width" onclick="toggleWidth()">Expand table</button>' );
   });
+
+  // Clickable checkboxes
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    // remove the disabled attribute; added by kramdown by default
+    checkbox.removeAttribute('disabled');
+  });
 </script>
 <!-- end custom head snippets -->
