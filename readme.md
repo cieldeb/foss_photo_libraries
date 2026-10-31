@@ -17,6 +17,7 @@ Tip: Hover over emoji for additional information (ðŸ”— link to related issue, ðŸ
 
 (Toggle visibility of specific project in the table)
 
+<<<<<<< HEAD
 - [x]{: #allCheckbox} All
 - [ ] Chevereto
 - [ ] Damselfly
@@ -35,6 +36,26 @@ Tip: Hover over emoji for additional information (ðŸ”— link to related issue, ðŸ
 - [ ] Photoview
 - [ ] Piwigo
 - [ ] Snapcrescent
+=======
+[x]{: #allCheckbox} All
+[ ] Chevereto
+[ ] Damselfly
+[ ] Ente
+[ ] Foldergram
+[ ] HomeGallery
+[ ] Immich
+[ ] Librephotos
+[ ] Lychee
+[ ] Nextcloud Photos
+[ ] Nextcloud Memories
+[ ] Photonix
+[ ] Photofield
+[ ] PiGallery2
+[ ] Photoprism
+[ ] Photoview
+[ ] Piwigo
+[ ] Snapcrescent
+>>>>>>> 357420d1c96895c4977dbae6648737240d2b3edd
 
 
 | Feature | [Chevereto](https://github.com/chevereto/chevereto) | [Damselfly](https://github.com/Webreaper/Damselfly) | [Ente](https://github.com/ente-io/ente) | [Foldergram](https://github.com/foldergram/foldergram) | [HomeGallery](https://github.com/xemle/home-gallery) | [Immich](https://github.com/immich-app/immich) | [Librephotos](https://github.com/LibrePhotos/librephotos) | [Lychee](https://github.com/LycheeOrg/Lychee) | [Nextcloud Photos](https://github.com/nextcloud/photos) | [Nextcloud Memories](https://github.com/pulsejet/memories) | [Photonix](https://github.com/photonixapp/photonix) | [Photofield](https://github.com/SmilyOrg/photofield) | [PiGallery2](https://github.com/bpatrik/pigallery2) | [Photoprism](https://github.com/photoprism/photoprism) | [Photoview](https://github.com/photoview/photoview) | [Piwigo](https://github.com/Piwigo/Piwigo) | [Snapcrescent](https://github.com/snapcrescent/snapcrescent) |
