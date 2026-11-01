@@ -91,7 +91,7 @@ def generate_logo_row(projects):
     for project in projects:
         logo_url = project["logo_url"]
         logo_alt = project["logo_alt"]
-        cell = f'<img src="{logo_url}" style="width: 50px"  alt="{logo_alt}" id="{project["name"]}"'
+        cell = f'<img src="{logo_url}" style="width: 50px"  alt="{logo_alt}" id="{project["name"]}">'
         row += f"| {cell} "
 
     row += "|\n"
