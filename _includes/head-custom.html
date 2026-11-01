@@ -30,6 +30,22 @@
   });
 }
 
+function onCheckboxChange(event) {
+  const all = document.querySelector('#allCheckbox');
+  const changed = event.target;
+
+  if (all && changed !== all && all.checked) {
+    // Leaving "All" mode: keep the current state by checking every project box,
+    // then apply the user's click (which was already toggled by the browser).
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      if (cb !== all && cb !== changed) cb.checked = true;
+    });
+    all.checked = false;
+  }
+
+    updateVisibility();
+}
+
   document.addEventListener("DOMContentLoaded", function(event) {
     var el = document.querySelector('table');
     var wrapper = document.createElement('div');
@@ -41,9 +57,9 @@
     // Clickable checkboxes
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
-    checkbox.removeAttribute('disabled');            // kramdown adds this
-    checkbox.addEventListener('change', updateVisibility);
-  });
+      checkbox.removeAttribute('disabled');   // kramdown adds this
+      checkbox.addEventListener('change', onCheckboxChange);
+    });
 
     // Adds IDs to cells for visibility toggling
     document.querySelectorAll('td [id], th [id]').forEach(el => {
