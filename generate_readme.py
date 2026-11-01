@@ -302,7 +302,7 @@ def generate_project_selector(data):
     projects_checkboxes = "(Toggle visibility of specific project in the table)\n\n- [x] {:#allCheckbox} All\n"
     for project in data["projects"]:
         project_name = project["name"]
-        projects_checkboxes += "- [ ] {:#%sCheckbox} %s\n" % (project_name.lower().replace(" ",""), project_name)
+        projects_checkboxes += "- [ ] {:#%s} %s\n" % (project_name.lower().replace(" ",""), project_name)
 
     projects_checkboxes += "\n\n"
     return projects_checkboxes
