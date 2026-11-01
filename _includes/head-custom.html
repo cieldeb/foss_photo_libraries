@@ -17,34 +17,61 @@
   }
 
   function updateVisibility() {
-  const all = document.querySelector('#allCheckbox');
-  const showAll = all && all.checked;
+    const all = document.querySelector('#allCheckbox');
+    const showAll = all && all.checked;
+    const table = document.querySelector('table');
+    if (!table) return;
 
-  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-    if (checkbox === all || !checkbox.id) return;
+    const hiddenColumns = [];
 
-    const visible = showAll || checkbox.checked;
-    document.querySelectorAll(`.${CSS.escape(checkbox.id)}`).forEach(element => {
-      element.style.display = visible ? '' : 'none';
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      if (checkbox === all || !checkbox.id) return;
+
+      // The header link has the class matching the checkbox id
+      const header = table.querySelector(`thead .${CSS.escape(checkbox.id)}`)?.closest('th');
+      if (!header) {
+        console.warn('No header found for', checkbox.id);
+        return;
+      }
+
+      if (!(showAll || checkbox.checked)) {
+        hiddenColumns.push(header.cellIndex + 1);   // nth-child is 1-based
+      }
     });
-  });
-}
 
-function onCheckboxChange(event) {
-  const all = document.querySelector('#allCheckbox');
-  const changed = event.target;
-
-  if (all && changed !== all && all.checked) {
-    // Leaving "All" mode: keep the current state by checking every project box,
-    // then apply the user's click (which was already toggled by the browser).
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-      if (cb !== all && cb !== changed) cb.checked = true;
-    });
-    all.checked = false;
+    let style = document.getElementById('column-visibility');
+    if (!style) {
+      style = document.createElement('style');
+      style.id = 'column-visibility';
+      document.head.appendChild(style);
+    }
+    style.textContent = hiddenColumns
+      .map(i => `table tr > :nth-child(${i}) { display: none !important; }`)
+      .join('\n');
   }
 
+  function onCheckboxChange(event) {
+    const all = document.querySelector('#allCheckbox');
+    const changed = event.target;
+    const projects = [...document.querySelectorAll('input[type="checkbox"]')]
+      .filter(cb => cb !== all);
+
+    if (changed === all) {
+      if (all.checked) {
+        projects.forEach(cb => cb.checked = false);   // All overrides the rest
+      } else if (!projects.some(cb => cb.checked)) {
+        all.checked = true;                           // never leave an empty table
+      }
+    } else {
+      if (changed.checked) {
+        all.checked = false;                          // picking a project leaves "All" mode
+      } else if (!projects.some(cb => cb.checked)) {
+        all.checked = true;                           // last project unchecked -> back to All
+      }
+    }
+
     updateVisibility();
-}
+  }
 
   document.addEventListener("DOMContentLoaded", function(event) {
     var el = document.querySelector('table');
@@ -55,8 +82,7 @@ function onCheckboxChange(event) {
     wrapper.insertAdjacentHTML( 'beforebegin', '<button name="toggle-table-width" onclick="toggleWidth()">Expand table</button>' );
 
     // Clickable checkboxes
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       checkbox.removeAttribute('disabled');   // kramdown adds this
       checkbox.addEventListener('change', onCheckboxChange);
     });
