@@ -23,7 +23,7 @@
     } else {
       elementVisibility = "collapse"
     }
-    const projectElements = document.querySelectorAll(`#${checkbox.id}`)
+    const projectElements = document.querySelectorAll(`.${checkbox.id}`)
     projectElements.forEach(element => {
       element.style.visibility = elementVisibility
     });

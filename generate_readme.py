@@ -75,7 +75,7 @@ def generate_table_header(projects):
         name = project["name"]
         repo = project["repo"]
         url = f"https://github.com/{repo}"
-        header += '| <a id="%s" href="{%s}">%s</a> ' % (project["name"].lower().replace(" ",""), url, name)
+        header += '| <a class="%s" href="{%s}">%s</a> ' % (project["name"].lower().replace(" ",""), url, name)
         separator += "| " + "-" * (len(url) + len(name) + 4) + " "
 
     header += "|\n"
@@ -91,7 +91,7 @@ def generate_logo_row(projects):
     for project in projects:
         logo_url = project["logo_url"]
         logo_alt = project["logo_alt"]
-        cell = f'<img src="{logo_url}" style="width: 50px"  alt="{logo_alt}" id="{project["name"]}">'
+        cell = f'<img src="{logo_url}" style="width: 50px"  alt="{logo_alt}" class="{project["name"]}">'
         row += f"| {cell} "
 
     row += "|\n"
@@ -128,7 +128,7 @@ def generate_badge_row(
         else:
             badge = badge_template.format(repo=repo)
 
-        row += '| <span id="%s">%s</span> ' % (project["name"].lower().replace(" ",""), badge)
+        row += '| <span class="%s">%s</span> ' % (project["name"].lower().replace(" ",""), badge)
 
 
     row += "|\n"
@@ -147,7 +147,7 @@ def generate_license_row(projects):
         else:
             repo = project["repo"]
             badge = f"![?](https://img.shields.io/github/license/{repo}?label=%20)"
-        row += '| <span id="%s">%s</span> ' % (project["name"].lower().replace(" ",""), badge)
+        row += '| <span class="%s">%s</span> ' % (project["name"].lower().replace(" ",""), badge)
 
 
     row += "|\n"
@@ -187,7 +187,7 @@ def generate_default_row(feature, projects):
             url = project[feature_url_key]
             cell = f"[{cell}]({url})"
 
-        row += '| <span id="%s">%s</span> ' % (project["name"].lower().replace(" ",""), cell)
+        row += '| <span class="%s">%s</span> ' % (project["name"].lower().replace(" ",""), cell)
 
     row += "|\n"
     return row
