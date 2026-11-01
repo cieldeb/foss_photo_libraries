@@ -16,18 +16,19 @@
     }
   }
 
-  function toggleProjectVisibility(checkbox) {
-    var elementDisplay = ""
-    if (checkbox.checked === true || document.querySelector("#allCheckbox").checked === true) {
-      elementDisplay = "block"
-    } else {
-      elementDisplay = "none"
-    }
-    const projectElements = document.querySelectorAll(`.${checkbox.id}`)
-    projectElements.forEach(element => {
-      element.style.display = elementDisplay
+  function updateVisibility() {
+  const all = document.querySelector('#allCheckbox');
+  const showAll = all && all.checked;
+
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    if (checkbox === all || !checkbox.id) return;
+
+    const visible = showAll || checkbox.checked;
+    document.querySelectorAll(`.${CSS.escape(checkbox.id)}`).forEach(element => {
+      element.style.display = visible ? '' : 'none';
     });
-  }
+  });
+}
 
   document.addEventListener("DOMContentLoaded", function(event) {
     var el = document.querySelector('table');
@@ -40,10 +41,9 @@
     // Clickable checkboxes
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
-      // remove the disabled attribute; added by kramdown by default
-      checkbox.removeAttribute('disabled');
-      toggleProjectVisibility(checkbox)
-    });
+    checkbox.removeAttribute('disabled');            // kramdown adds this
+    checkbox.addEventListener('change', updateVisibility);
+  });
 
     // Adds IDs to cells for visibility toggling
     document.querySelectorAll('td [id], th [id]').forEach(el => {
@@ -57,6 +57,8 @@
         el.removeAttribute('id');
       }
     });
+
+    updateVisibility();
   });
 </script>
 <!-- end custom head snippets -->
