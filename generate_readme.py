@@ -185,7 +185,7 @@ def generate_default_row(feature, projects):
             url = project[feature_url_key]
             cell = f"[{cell}]({url})"
 
-        row += "| {:#%s} %s " % (project["name"].lower().replace(" ",""), cell)
+        row += "{:#%s}| %s " % (project["name"].lower().replace(" ",""), cell)
 
     row += "|\n"
     return row
