@@ -15,6 +15,20 @@
       document.querySelector("button[name='toggle-table-width']").textContent = "Collapse table";
     }
   }
+
+  function toggleProjectVisibility(checkbox) {
+    const checkedState = ""
+    if (checkbox.checked === true || document.querySelector("#allCheckbox").checked === true) {
+      checkedState = "block"
+    } else {
+      checkedState = "none"
+    }
+    const projectElements = document.querySelectorAll(`#${checkbox.id}`)
+    projectElements.forEach(element => {
+      element.style.display = checkedState
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function(event) {
     var el = document.querySelector('table');
     var wrapper = document.createElement('div');
@@ -28,6 +42,20 @@
     checkboxes.forEach(checkbox => {
       // remove the disabled attribute; added by kramdown by default
       checkbox.removeAttribute('disabled');
+      toggleProjectVisibility(checkbox)
+    });
+
+    // Adds IDs to cells for visibility toggling
+    document.querySelectorAll('td [id], th [id]').forEach(el => {
+      const cell = el.closest('td, th');
+      if (!cell || cell.id) return;
+      cell.id = el.id;
+
+      if (el.tagName === 'SPAN') {
+        el.replaceWith(...el.childNodes);
+      } else {
+        el.removeAttribute('id');
+      }
     });
   });
 </script>
