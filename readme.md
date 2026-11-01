@@ -18,23 +18,23 @@ Tip: Hover over emoji for additional information (🔗 link to related issue, �
 (Toggle visibility of specific project in the table)
 
 - [x] {:#allCheckbox} All
-- [ ] {:#cheveretoCheckbox} Chevereto
-- [ ] {:#damselflyCheckbox} Damselfly
-- [ ] {:#enteCheckbox} Ente
-- [ ] {:#foldergramCheckbox} Foldergram
-- [ ] {:#homegalleryCheckbox} HomeGallery
-- [ ] {:#immichCheckbox} Immich
-- [ ] {:#librephotosCheckbox} Librephotos
-- [ ] {:#lycheeCheckbox} Lychee
-- [ ] {:#nextcloudphotosCheckbox} Nextcloud Photos
-- [ ] {:#nextcloudmemoriesCheckbox} Nextcloud Memories
-- [ ] {:#photonixCheckbox} Photonix
-- [ ] {:#photofieldCheckbox} Photofield
-- [ ] {:#pigallery2Checkbox} PiGallery2
-- [ ] {:#photoprismCheckbox} Photoprism
-- [ ] {:#photoviewCheckbox} Photoview
-- [ ] {:#piwigoCheckbox} Piwigo
-- [ ] {:#snapcrescentCheckbox} Snapcrescent
+- [ ] {:#chevereto} Chevereto
+- [ ] {:#damselfly} Damselfly
+- [ ] {:#ente} Ente
+- [ ] {:#foldergram} Foldergram
+- [ ] {:#homegallery} HomeGallery
+- [ ] {:#immich} Immich
+- [ ] {:#librephotos} Librephotos
+- [ ] {:#lychee} Lychee
+- [ ] {:#nextcloudphotos} Nextcloud Photos
+- [ ] {:#nextcloudmemories} Nextcloud Memories
+- [ ] {:#photonix} Photonix
+- [ ] {:#photofield} Photofield
+- [ ] {:#pigallery2} PiGallery2
+- [ ] {:#photoprism} Photoprism
+- [ ] {:#photoview} Photoview
+- [ ] {:#piwigo} Piwigo
+- [ ] {:#snapcrescent} Snapcrescent
 
 
 | Feature | <a class="chevereto" href="{https://github.com/chevereto/chevereto}">Chevereto</a> | <a class="damselfly" href="{https://github.com/Webreaper/Damselfly}">Damselfly</a> | <a class="ente" href="{https://github.com/ente-io/ente}">Ente</a> | <a class="foldergram" href="{https://github.com/foldergram/foldergram}">Foldergram</a> | <a class="homegallery" href="{https://github.com/xemle/home-gallery}">HomeGallery</a> | <a class="immich" href="{https://github.com/immich-app/immich}">Immich</a> | <a class="librephotos" href="{https://github.com/LibrePhotos/librephotos}">Librephotos</a> | <a class="lychee" href="{https://github.com/LycheeOrg/Lychee}">Lychee</a> | <a class="nextcloudphotos" href="{https://github.com/nextcloud/photos}">Nextcloud Photos</a> | <a class="nextcloudmemories" href="{https://github.com/pulsejet/memories}">Nextcloud Memories</a> | <a class="photonix" href="{https://github.com/photonixapp/photonix}">Photonix</a> | <a class="photofield" href="{https://github.com/SmilyOrg/photofield}">Photofield</a> | <a class="pigallery2" href="{https://github.com/bpatrik/pigallery2}">PiGallery2</a> | <a class="photoprism" href="{https://github.com/photoprism/photoprism}">Photoprism</a> | <a class="photoview" href="{https://github.com/photoview/photoview}">Photoview</a> | <a class="piwigo" href="{https://github.com/Piwigo/Piwigo}">Piwigo</a> | <a class="snapcrescent" href="{https://github.com/snapcrescent/snapcrescent}">Snapcrescent</a> |
