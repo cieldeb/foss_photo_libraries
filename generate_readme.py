@@ -185,7 +185,7 @@ def generate_default_row(feature, projects):
             url = project[feature_url_key]
             cell = f"[{cell}]({url})"
 
-        row += f"| {cell} "
+        row += "| {:%s} %s " % (project["name"].lower().replace(" ",""), cell)
 
     row += "|\n"
     return row
@@ -299,8 +299,8 @@ def validate_projects_json(data):
 def generate_project_selector(data):
     projects_checkboxes = "(Toggle visibility of specific project in the table)\n\n- [x] {:#allCheckbox} All\n"
     for project in data["projects"]:
-        # projects_checkboxes += f"- {{: #}}{project["name"]} [ ] {project["name"]}\n"
-        projects_checkboxes += "- [ ] {:#%sCheckbox} %s\n" % (project["name"], project["name"])
+        project_name = project["name"]
+        projects_checkboxes += "- [ ] {:#%sCheckbox} %s\n" % (project_name.lower().replace(" ",""), project_name)
 
     projects_checkboxes += "\n\n"
     return projects_checkboxes
