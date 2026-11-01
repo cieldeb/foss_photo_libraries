@@ -17,15 +17,15 @@
   }
 
   function toggleProjectVisibility(checkbox) {
-    var checkedState = ""
+    var elementVisibility = ""
     if (checkbox.checked === true || document.querySelector("#allCheckbox").checked === true) {
-      checkedState = "block"
+      elementVisibility = "visible"
     } else {
-      checkedState = "none"
+      elementVisibility = "collapse"
     }
     const projectElements = document.querySelectorAll(`#${checkbox.id}`)
     projectElements.forEach(element => {
-      element.style.display = checkedState
+      element.style.visibility = elementVisibility
     });
   }
 
